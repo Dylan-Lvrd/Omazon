@@ -1,0 +1,46 @@
+@use '../styles/mixins';
+@use '../styles/variables' as v;
+
+.footer {
+    color: v.$main-low;
+  
+    &-top {
+      padding: 0.5rem;
+      background-color: v.$main-medium;
+      text-align: center;
+      font-weight: bold;
+      font-size: v.$text-small;
+    }
+  
+    &-main {
+      padding: 2rem;
+      text-align: center;
+      background-color: v.$main-high;
+      font-size: v.$text-smaller;
+  
+      &-btn {
+        @include mixins.button(v.$radius-medium);
+        margin: 1rem;
+      }
+    }
+  
+    &-logo {
+      padding: 2rem;
+      background-color: v.$main-high;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-top: 1px solid v.$main-low;
+  
+      img {
+        height: 23px;
+      }
+    }
+  
+    &-legals {
+      padding: 2rem;
+      background-color: v.$main-higher;
+      text-align: center;
+      font-size: v.$text-smaller;
+    }
+  }

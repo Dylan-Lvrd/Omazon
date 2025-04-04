@@ -1,0 +1,462 @@
+[
+    {
+      "id": 1,
+      "title": "Trixie Frisbee Caoutchouc Naturel 22 cm pour Chien, Coloris aléatoire",
+      "price": 8.99,
+      "image": "frisbee.webp",
+      "category": {
+        "id": 1,
+        "title": "Animalerie",
+        "slug": "animalerie",
+        "image": "animalerie.webp"
+      },
+      "tag": {
+        "id": 3,
+        "type": "best-seller",
+        "text": "N°1 des ventes"
+      }
+    },
+    {
+      "id": 2,
+      "title": "PETKIT Pura Max Litiere Chat Autonettoyante, Bac à Litière Autonettoyante, xSecure/élimination des Odeurs/Contrôle APP/Capacité Maximale de 76L pour Plusieurs Chats",
+      "price": 599.99,
+      "image": "litiere.webp",
+      "category": {
+        "id": 1,
+        "title": "Animalerie",
+        "slug": "animalerie",
+        "image": "animalerie.webp"
+      },
+      "tag": 0
+    },
+    {
+      "id": 3,
+      "title": "Omazon Basics sacs à déjections canines avec distributeur et clip pou",
+      "price": 6.29,
+      "image": "sacs-caca.webp",
+      "category": {
+        "id": 1,
+        "title": "Animalerie",
+        "slug": "animalerie",
+        "image": "animalerie.webp"
+      },
+      "tag": {
+        "id": 1,
+        "type": "choice",
+        "text": "Choix <span>d'Omazon</span>"
+      }
+    },
+    {
+      "id": 4,
+      "title": "LUXÉOL - Sérum Barbe Pousse - Densité & Epaisseur - Aide À La Pousse De La Barbe & Amélioration Du Poils - Fabriqué En Europe - 60ml",
+      "price": 22.49,
+      "image": "barbe.webp",
+      "category": {
+        "id": 2,
+        "title": "Beauté et parfum",
+        "slug": "beaute-et-parfum",
+        "image": "beaute-et-parfum.webp"
+      },
+      "tag": {
+        "id": 2,
+        "type": "new",
+        "text": "Nouveauté"
+      }
+    },
+    {
+      "id": 5,
+      "title": "ESSIE nail polish - Vernis à ongles 13.5 ml color Strut Your Stuff",
+      "price": 9.11,
+      "image": "vernis.webp",
+      "category": {
+        "id": 2,
+        "title": "Beauté et parfum",
+        "slug": "beaute-et-parfum",
+        "image": "beaute-et-parfum.webp"
+      },
+      "tag": 0
+    },
+    {
+      "id": 6,
+      "title": "Palette Lancôme Hypnôse 5 teintes roses - palette de fards à paupières, couleur 06 Reflets d’Amethyste 4 g",
+      "price": 51.64,
+      "image": "maquillage.webp",
+      "category": {
+        "id": 2,
+        "title": "Beauté et parfum",
+        "slug": "beaute-et-parfum",
+        "image": "beaute-et-parfum.webp"
+      },
+      "tag": {
+        "id": 4,
+        "type": "flash",
+        "text": "Vente flash"
+      }
+    },
+    {
+      "id": 7,
+      "title": "Loctite Super Glue-3 | Précision (flacon de 5 g) – Colle forte pour réparations précises – Colle liquide tous matériaux – Colle transparente à séchage rapide",
+      "price": 3.59,
+      "image": "glue.webp",
+      "category": {
+        "id": 3,
+        "title": "Bricolage",
+        "slug": "bricolage",
+        "image": "bricolage.webp"
+      },
+      "tag": {
+        "id": 3,
+        "type": "best-seller",
+        "text": "N°1 des ventes"
+      }
+    },
+    {
+      "id": 8,
+      "title": "Multimètre Numérique KAIWEETS, Multimètre Digital, Voltmètre Multifonctions 2000 Comptes, Testeur Électrique, Ohmmètre, Mesure La Tension CA/CC, Courant CC, Résistance, Continuité, Diode",
+      "price": 16.97,
+      "image": "multimetre.webp",
+      "category": {
+        "id": 3,
+        "title": "Bricolage",
+        "slug": "bricolage",
+        "image": "bricolage.webp"
+      },
+      "tag": 0
+    },
+    {
+      "id": 9,
+      "title": "FACOM Monture de Scie à Métaux - Poignée Ergonomique - Légère et Compact - 601PB",
+      "price": 24.9,
+      "image": "scie.webp",
+      "category": {
+        "id": 3,
+        "title": "Bricolage",
+        "slug": "bricolage",
+        "image": "bricolage.webp"
+      },
+      "tag": 0
+    },
+    {
+      "id": 10,
+      "title": "Scie sauteuse 720W avec 6 lames dans coffret Makpac - MAKITA 4351FCTJ",
+      "price": 146.0,
+      "image": "scie-sauteuse.webp",
+      "category": {
+        "id": 3,
+        "title": "Bricolage",
+        "slug": "bricolage",
+        "image": "bricolage.webp"
+      },
+      "tag": {
+        "id": 2,
+        "type": "new",
+        "text": "Nouveauté"
+      }
+    },
+    {
+      "id": 11,
+      "title": "Facom Coffret de tournevis, Multi, 5 Pièces",
+      "price": 28.78,
+      "image": "tournevis.webp",
+      "category": {
+        "id": 3,
+        "title": "Bricolage",
+        "slug": "bricolage",
+        "image": "bricolage.webp"
+      },
+      "tag": 0
+    },
+    {
+      "id": 12,
+      "title": "Vans Sk8-Hi rose léopard Slim VQG369O, Baskets mode mixte adulte",
+      "price": 59.57,
+      "image": "vans.webp",
+      "category": {
+        "id": 8,
+        "title": "Chaussures",
+        "slug": "chaussures",
+        "image": "chaussures.webp"
+      },
+      "tag": {
+        "id": 2,
+        "type": "new",
+        "text": "Nouveauté"
+      }
+    },
+    {
+      "id": 13,
+      "title": "Pantoufles Mignon Furry Alpaga Rose Peluche Animal Fun",
+      "price": 18.99,
+      "image": "chaussons.webp",
+      "category": {
+        "id": 8,
+        "title": "Chaussures",
+        "slug": "chaussures",
+        "image": "chaussures.webp"
+      },
+      "tag": 0
+    },
+    {
+      "id": 14,
+      "title": "LA SPORTIVA Jackal II - Chaussures Trail Femme",
+      "price": 138.9,
+      "image": "sportiva.webp",
+      "category": {
+        "id": 8,
+        "title": "Chaussures",
+        "slug": "chaussures",
+        "image": "chaussures.webp"
+      },
+      "tag": 0
+    },
+    {
+      "id": 15,
+      "title": "DC Shoes Homme Pure High-Top WC Winter Basket",
+      "price": 71.95,
+      "image": "dc-shoes.webp",
+      "category": {
+        "id": 8,
+        "title": "Chaussures",
+        "slug": "chaussures",
+        "image": "chaussures.webp"
+      },
+      "tag": 0
+    },
+    {
+      "id": 16,
+      "title": "Tommy Hilfiger Femme Chaussures Semelles Compensées Espadrilles Talon Compensé",
+      "price": 64.95,
+      "image": "espadrilles.webp",
+      "category": {
+        "id": 8,
+        "title": "Chaussures",
+        "slug": "chaussures",
+        "image": "chaussures.webp"
+      },
+      "tag": {
+        "id": 1,
+        "type": "choice",
+        "text": "Choix <span>d'Omazon</span>"
+      }
+    },
+    {
+      "id": 17,
+      "title": "Weber Barbecue à Charbon Compact Kettle 47cm - Barbecue à Couvercle, Trépied et Roues - Barbecue d'Extérieur Autoportant avec Vasque en Porcelaine Émaillée - Noir (1221004)",
+      "price": 70.95,
+      "image": "bbq.webp",
+      "category": {
+        "id": 5,
+        "title": "Jardin",
+        "slug": "jardin",
+        "image": "jardin.webp"
+      },
+      "tag": {
+        "id": 2,
+        "type": "new",
+        "text": "Nouveauté"
+      }
+    },
+    {
+      "id": 18,
+      "title": "Edihome, Kit Barbecue, Ustensiles Barbecue, Ensemble d'accessoires de 25 pièces, Professionnel, Acier Inoxydable, Cadeau d'homme, Étui de Gril de Qualité Supérieure.",
+      "price": 29.99,
+      "image": "bbq-kit.webp",
+      "category": {
+        "id": 5,
+        "title": "Jardin",
+        "slug": "jardin",
+        "image": "jardin.webp"
+      },
+      "tag": 0
+    },
+    {
+      "id": 19,
+      "title": "Kärcher Nettoyeur Haute Pression K 2 Universal Edition, Pression : max. 110 bar, Débit : 360 l/h, Surface : 20 m²/h, Filtre à Eau, Poids : 3,8 kg, Flexible et Pistolet Haute Pression, Rotabuse",
+      "price": 63.95,
+      "image": "karcher.webp",
+      "category": {
+        "id": 5,
+        "title": "Jardin",
+        "slug": "jardin",
+        "image": "jardin.webp"
+      },
+      "tag": 0
+    },
+    {
+      "id": 20,
+      "title": "BLACK+DECKER Tondeuse Filaire 1000W, Tondeuse à Gazon Electrique 32 cm, 3 hauteurs réglables 20, 40 et 60 mm, Tondeuse Légère avec Poignée type Landau, idéale Jusqu'à 300 m², BEMW351-QS",
+      "price": 69.99,
+      "image": "tondeuse.webp",
+      "category": {
+        "id": 5,
+        "title": "Jardin",
+        "slug": "jardin",
+        "image": "jardin.webp"
+      },
+      "tag": 0
+    },
+    {
+      "id": 21,
+      "title": "BTFL Cody Surfskate 2024 Skateboard, Longboard",
+      "price": 208.89,
+      "image": "surfskate.webp",
+      "category": {
+        "id": 6,
+        "title": "Jeux et loisirs",
+        "slug": "jeux",
+        "image": "jeux.webp"
+      },
+      "tag": 0
+    },
+    {
+      "id": 22,
+      "title": "LEGO Star Wars Millennium Falcon, Set pour Adultes du 25e Anniversaire, Vaisseau Spatial à Collectionner, Décoration d'Intérieure, Véhicule Mythique, Cadeau d’Anniversaire pour Fans de la Saga 75375",
+      "price": 69.99,
+      "image": "lego.webp",
+      "category": {
+        "id": 6,
+        "title": "Jeux et loisirs",
+        "slug": "jeux",
+        "image": "jeux.webp"
+      },
+      "tag": 0
+    },
+    {
+      "id": 23,
+      "title": "Wdk Partner- QUILLES Nordiques, WP-021C, Multicolore, Small",
+      "price": 14.5,
+      "image": "molki.webp",
+      "category": {
+        "id": 6,
+        "title": "Jeux et loisirs",
+        "slug": "jeux",
+        "image": "jeux.webp"
+      },
+      "tag": 0
+    },
+    {
+      "id": 24,
+      "title": "Nerf Elite 2.0, Blaster motorisé Double Punch, canons alternatifs Rapides, 50 fléchettes Nerf Elite, 2 chargeurs 10 fléchettes, dès 8 Ans",
+      "price": 19.99,
+      "image": "nerf.webp",
+      "category": {
+        "id": 6,
+        "title": "Jeux et loisirs",
+        "slug": "jeux",
+        "image": "jeux.webp"
+      },
+      "tag": 0
+    },
+    {
+      "id": 25,
+      "title": "ZENAGAME Le Traquenard, Le Jeu Alcool de 300 Cartes Fun et Hilarantes pour tes Soirées Posées ou Endiablées - Jeux de Société, Jeu Adulte",
+      "price": 19.99,
+      "image": "traquenard.webp",
+      "category": {
+        "id": 6,
+        "title": "Jeux et loisirs",
+        "slug": "jeux",
+        "image": "jeux.webp"
+      },
+      "tag": 0
+    },
+    {
+      "id": 26,
+      "title": "Stellar Blade, Édition Standard, PlayStation 5",
+      "price": 60.9,
+      "image": "blade.webp",
+      "category": {
+        "id": 7,
+        "title": "Jeux vidéos",
+        "slug": "jeux-videos",
+        "image": "jeux-videos.webp"
+      },
+      "tag": 0
+    },
+    {
+      "id": 27,
+      "title": "Sony, Manette sans fil DualSense™, PlayStation 5, Batterie rechargeable, Bluetooth, Compatible PS5 et PC, couleur midnight black noire",
+      "price": 64.0,
+      "image": "manette.webp",
+      "category": {
+        "id": 7,
+        "title": "Jeux vidéos",
+        "slug": "jeux-videos",
+        "image": "jeux-videos.webp"
+      },
+      "tag": {
+        "id": 1,
+        "type": "choice",
+        "text": "Choix <span>d'Omazon</span>"
+      }
+    },
+    {
+      "id": 28,
+      "title": "Nintendo Console Switch avec Joy-Con bleu néon et rouge néon",
+      "price": 266.09,
+      "image": "switch.webp",
+      "category": {
+        "id": 7,
+        "title": "Jeux vidéos",
+        "slug": "jeux-videos",
+        "image": "jeux-videos.webp"
+      },
+      "tag": 0
+    },
+    {
+      "id": 29,
+      "title": "The Legend of Zelda : Tears of the Kingdom",
+      "price": 51.49,
+      "image": "zelda-totk.webp",
+      "category": {
+        "id": 7,
+        "title": "Jeux vidéos",
+        "slug": "jeux-videos",
+        "image": "jeux-videos.webp"
+      },
+      "tag": 0
+    },
+    {
+      "id": 30,
+      "title": "Voice Content and Usability (English Edition)",
+      "price": 25.12,
+      "image": "accessibilite.webp",
+      "category": {
+        "id": 8,
+        "title": "Livres",
+        "slug": "livres",
+        "image": "livres.webp"
+      },
+      "tag": 0
+    },
+    {
+      "id": 31,
+      "title": "H2G2: L'intégrale de la trilogie en cinq volumes",
+      "price": 32.9,
+      "image": "h2g2.webp",
+      "category": {
+        "id": 8,
+        "title": "Livres",
+        "slug": "livres",
+        "image": "livres.webp"
+      },
+      "tag": 0
+    },
+    {
+      "id": 32,
+      "title": "Learning React: Modern Patterns for Developing React Apps",
+      "price": 55.77,
+      "image": "react.webp",
+      "category": {
+        "id": 8,
+        "title": "Livres",
+        "slug": "livres",
+        "image": "livres.webp"
+      },
+      "tag": {
+        "id": 2,
+        "type": "new",
+        "text": "Nouveauté"
+      }
+    }
+  ]

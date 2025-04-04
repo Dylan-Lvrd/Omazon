@@ -1,0 +1,46 @@
+@use "sass:color";
+@use "variables" as v;
+
+// mixiin pour le filtre gris par dessus les produits
+@mixin product-overlay($radius: 0) {
+  position: relative;
+
+  &::before {
+    content: "";
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.05);
+    border-radius: $radius;
+  }
+}
+
+// mixin pour les boutons 
+@mixin button($radius) {
+  border: none;
+  border-radius: $radius;
+  background-color: v.$brand-primary;
+  border: 1px solid v.$brand-primary;
+  cursor: pointer;
+  &:hover {
+    background-color: color.scale(v.$brand-primary, $lightness: +20%);
+  }
+  &:active {
+    border: 1px solid v.$info-medium;
+    box-shadow: 0 0 0 2px v.$info-lower, inset 0 0 0 1px v.$main-lower;
+  }
+}
+
+// mixins pour le responsive
+@mixin for-tablets {
+  @media (min-width: 480px) { @content; }
+}
+@mixin for-laptops {
+  @media (min-width: 700px) { @content; }
+}
+@mixin for-large-screens {
+  @media (min-width: 1280px) { @content; }
+}

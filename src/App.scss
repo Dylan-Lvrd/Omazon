@@ -1,0 +1,11 @@
+// @use "./styles/reset";
+// @use "./styles/fonts";
+@use "./styles/mixins";
+@use "./styles/variables" as v;
+
+
+
+.main {
+    padding: 1rem;
+  }
+  

@@ -1,0 +1,28 @@
+@use './reset';
+@use './fonts';
+@use './mixins';
+@use './variables' as v;
+
+body {
+  font-family: "Amazon Ember", cursive;
+  font-size: v.$text-medium;
+  color: v.$main-higher;
+}
+
+a {
+  color: v.$main-low;
+  text-decoration: none;
+}
+
+h2 {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem ;
+}
+
+
+
+
+
+
+
+
