@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import './App.scss'
 import Categories from './components/Categories';
 import Footer from './components/Footer';
@@ -6,15 +7,18 @@ import Products from './components/Products';
 
 
 function App() {
+
+  const [cartProducts, setCartProducts] = useState([])
+  
   
 
   return (
     
 		<div className="app">
-			< Header />
+			< Header cartProducts={cartProducts} />
 			<main className="main">
         <Categories />
-        <Products />
+        <Products cartProducts={cartProducts} setCartProducts={setCartProducts} />
 			</main>
       <Footer />
 		</div>

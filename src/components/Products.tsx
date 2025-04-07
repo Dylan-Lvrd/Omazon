@@ -1,11 +1,14 @@
 import './Products.scss'
 import product from '../data/products.json'
 
+type ProductsProps = {
+	cartProducts: number[];
+	setCartProducts: React.Dispatch<React.SetStateAction<number[]>>;
+  };
 
 
 
-
-function Products (){
+function Products ({cartProducts, setCartProducts}: ProductsProps){
 
     return (
 
@@ -14,7 +17,6 @@ function Products (){
 					<div className="products-list">
 						
 						{product.map((products) => {
-							console.log(products)
 							return (
 								<div key={products.id} className="product">
 							<div className="product-img">
@@ -25,7 +27,10 @@ function Products (){
 								{products.price}
 								<span className="price-decimal"> €</span>
 							</div>
-							<button type="button" className="product-add">
+							<button
+							 type="button"
+							  className="product-add"
+							  onClick={() => setCartProducts([...cartProducts, products.id])}>
 								Ajouter au panier
 							</button>
 						</div>
