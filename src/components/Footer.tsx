@@ -18,7 +18,7 @@ function Footer (){
 				</div>
 
 				<div className="footer-logo">
-					<img src="./src/img/logo.png" alt="omazon" />
+				<img className="logo" src=".../../public/logos/omazon.svg" alt="omazon" />
 				</div>
 
 				<div className="footer-legals">

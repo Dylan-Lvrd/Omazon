@@ -6,9 +6,10 @@ import Header from './components/Header';
 import Products from './components/Products';
 
 
+
 function App() {
 
-  const [cartProducts, setCartProducts] = useState([])
+  const [cartProducts, setCartProducts] = useState<number[]>([]);
   
   
 
