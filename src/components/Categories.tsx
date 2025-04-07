@@ -6,36 +6,23 @@ function Categories (){
     return (
         <section className="categories">
 					<h2 className="categories-title">Catégories à l'honneur</h2>
-
-				
 					<div className="categories-list">
-						<div className="category">
-							<div className="category-img">
-								<img src="./src/img/categories/animalerie.jpg" alt="produit" />
-							</div>
-							<div className="category-name">Animalerie</div>
-						</div>
-						<div className="category">
+
+						{categorie.map((categories) => {
+							return (
+								<div key={categories.id} className="category">
 							<div className="category-img">
 								<img
-									src="./src/img/categories/beaute-et-parfum.png"
+									src={`../../public/categories/${categories.image}`}
 									alt="produit"
 								/>
 							</div>
-							<div className="category-name">Beauté</div>
+							<div className="category-name">{categories.title}</div>
 						</div>
-						<div className="category">
-							<div className="category-img">
-								<img src="./src/img/categories/livres.jpg" alt="produit" />
-							</div>
-							<div className="category-name">Livres</div>
-						</div>
-						<div className="category">
-							<div className="category-img">
-								<img src="./src/img/categories/bricolage.jpg" alt="produit" />
-							</div>
-							<div className="category-name">Bricolage</div>
-						</div>
+
+							)
+						})}
+						
 					</div>
 				</section>
     )
