@@ -1,10 +1,10 @@
 export interface IProduct {
-    iid: number;
+    id: number;
     title: string;
     price: number;
     image: string;
     category: ICategory;
-    tag: ITag;
+    tag: ITag | number;
 }
 
 export interface ICategory {
@@ -12,7 +12,6 @@ export interface ICategory {
     title: string;
     slug: string;
     image: string;
-
 }
 
 export interface ITag {

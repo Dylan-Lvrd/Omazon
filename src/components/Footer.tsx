@@ -1,6 +1,12 @@
 import './Footer.scss'
 
-function Footer (){
+
+
+interface FooterProps {
+	handleOpenModal: () => void; // Prop pour ouvrir la modale
+  }
+
+function Footer ({handleOpenModal}: FooterProps){
 
     return (
         <footer className="footer">
@@ -12,7 +18,7 @@ function Footer (){
 					<h3>Vous aussi gagnez de l'argent avec Omazon !</h3>
 					<p>Transformez vos passions en revenus.</p>
 					<p>Rejoingnez notre communautée de vendeurs dès aujourd'hui !</p>
-					<button className="footer-main-btn" type="button">
+					<button className="footer-main-btn" type="button" onClick={handleOpenModal}>
 						Devenez vendeurs sur Omazon
 					</button>
 				</div>

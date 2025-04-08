@@ -1,10 +1,9 @@
 import './Header.scss'
-import '../../public/logos/omazon.svg'
+
 
 type HeaderProps = {
     cartProducts: number[];
   };
-
 
 function Header ({cartProducts}: HeaderProps){
 

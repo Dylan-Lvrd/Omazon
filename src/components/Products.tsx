@@ -1,14 +1,15 @@
 import './Products.scss'
-import product from '../data/products.json'
+import { IProduct } from '../@types/product';
 
-type ProductsProps = {
+
+interface ProductsProps  {
 	cartProducts: number[];
 	setCartProducts: React.Dispatch<React.SetStateAction<number[]>>;
+	products : IProduct[];
+
   };
 
-
-
-function Products ({cartProducts, setCartProducts}: ProductsProps){
+function Products ({cartProducts, setCartProducts, products }: ProductsProps){
 
     return (
 
@@ -16,21 +17,21 @@ function Products ({cartProducts, setCartProducts}: ProductsProps){
 					<h2>Tous nos produits</h2>
 					<div className="products-list">
 						
-						{product.map((products) => {
+						{products.map((product) => {
 							return (
-								<div key={products.id} className="product">
+								<div key={product.id} className="product">
 							<div className="product-img">
-								<img src={`../../public/products/${products.image}`} alt="produit" />
+								<img src={`../../public/products/${product.image}`} alt="produit" />
 							</div>
-							<div className="product-name">{products.title}</div>
+							<div className="product-name">{product.title}</div>
 							<div className="product-price">
-								{products.price}
+								{product.price}
 								<span className="price-decimal"> €</span>
 							</div>
 							<button
 							 type="button"
 							  className="product-add"
-							  onClick={() => setCartProducts([...cartProducts, products.id])}>
+							  onClick={() => setCartProducts([...cartProducts, product.id])}>
 								Ajouter au panier
 							</button>
 						</div>
