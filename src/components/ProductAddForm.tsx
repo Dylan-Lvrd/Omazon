@@ -15,7 +15,7 @@ function ProductAddForm ({setProducts, products} : ProductsAddFormProps){
  return (
     <div className="modal">
       <div className="modal-content">
-        <h2>Ajouter un produit</h2>
+        {/* <h2>Ajouter un produit</h2> */}
         <form action={(formData) => {
 
           const foundCategory = categories.find((cat) => cat.id === parseInt(formData.get('category') as string));

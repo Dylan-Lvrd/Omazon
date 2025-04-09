@@ -25,6 +25,7 @@ function Modal({ title, onClose, children }: ModalProps) {
 				</div>
 
 				<div className="modal-content">{children}</div>
+                
 			</div>
 		</div>
 	);
