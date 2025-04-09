@@ -2,21 +2,34 @@ import { IProduct } from '../@types/product';
 import './ProductAddForm.scss';
 import tags from '../data/tags.json';
 import categories from '../data/categories.json';
-import { ICategory, ITag } from '../@types/product';
+import { useState } from 'react';
 
 
 interface ProductsAddFormProps  {
    setProducts : React.Dispatch<React.SetStateAction<IProduct[]>>;
    products : IProduct[]
+   onClose: () => void;
   };
 
-function ProductAddForm ({setProducts, products} : ProductsAddFormProps){
+function ProductAddForm ({setProducts, products, onClose} : ProductsAddFormProps){
+    const [error, setError] = useState('')
 
  return (
     <div className="modal">
       <div className="modal-content">
-        {/* <h2>Ajouter un produit</h2> */}
+        
+        {error && <p className="form-error">{error}</p>}
         <form action={(formData) => {
+          const title = formData.get('title') as string;
+          const image = formData.get('image') as string;
+          const priceStr = formData.get('price') as string;
+          const categoryId = formData.get('category') as string;
+          const tagId = formData.get('tag') as string;
+
+          if (!title || !image || !priceStr || !categoryId || !tagId) {
+            setError('Merci de remplir le formulaire');
+            return;
+          }
 
           const foundCategory = categories.find((cat) => cat.id === parseInt(formData.get('category') as string));
           const foundTag = tags.find((tag) => tag.id === parseInt(formData.get('tag') as string));
@@ -32,7 +45,10 @@ function ProductAddForm ({setProducts, products} : ProductsAddFormProps){
               category : foundCategory,
               tag: foundTag,
             }
-            return setProducts([...products, newProduct]);
+            
+            setProducts([...products, newProduct]);
+            setError('')
+            onClose()
           }
         }}>
         <label htmlFor="name">Nom du produit</label>

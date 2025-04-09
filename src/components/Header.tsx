@@ -1,11 +1,18 @@
+
+import { ICategory } from '../@types/product';
 import './Header.scss'
 
 
 type HeaderProps = {
     cartProducts: number[];
+    categories: ICategory[];
+    CategoriesOpen: boolean;
+    toggleCategories: () => void;
+
+
   };
 
-function Header ({cartProducts}: HeaderProps){
+function Header ({cartProducts, categories, CategoriesOpen, toggleCategories }: HeaderProps){
 
     return (
         <div className="header">
@@ -26,10 +33,22 @@ function Header ({cartProducts}: HeaderProps){
             <div className="header-cart-title">Panier</div>
         </a>
         <div className="header-form">
-            <button className="header-form-filter" type="button">
+            <button className="header-form-filter" type="button" onClick={toggleCategories} >
                 Toutes nos catégories
                 <img src=".../../public/icons/caret-down.svg" alt="flèche bas" className="icon-caret-down" />
             </button>
+            {CategoriesOpen && (
+                        <div className="categories-open">
+                            {categories.map((category) => (
+                                <div 
+                                    key={category.id} 
+                                    className="categories-item"
+                                >
+                                    {category.title}
+                                </div>
+                            ))}
+                        </div>
+            )}
             <input
                 type="text"
                 className="header-form-input"
