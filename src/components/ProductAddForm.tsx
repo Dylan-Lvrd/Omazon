@@ -17,7 +17,9 @@ function ProductAddForm ({setProducts, products, onClose} : ProductsAddFormProps
  return (
     <div className="modal">
       <div className="modal-content">
-        
+
+       {/*  Condition de remplissage du formulaire d'ajout d'un produit  */}
+       
         {error && <p className="form-error">{error}</p>}
         <form action={(formData) => {
           const title = formData.get('title') as string;

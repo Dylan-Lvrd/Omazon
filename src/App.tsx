@@ -13,17 +13,18 @@ import c from './data/categories.json'
 
 function App() {
 
-  const [cartProducts, setCartProducts] = useState<number[]>([]);
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [products, setProducts] = useState<IProduct[]>(p);
-  const [categories, setCategories] = useState<ICategory[]>(c);
+  const [cartProducts, setCartProducts] = useState<number[]>([]); // Affichage des produits dans le panier
+  const [isModalOpen, setIsModalOpen] = useState(false); // Affichage de la modal pour ajout d'un produit
+  const [products, setProducts] = useState<IProduct[]>(p); // Ajout d'un produit dans la modale
+  const [categories, setCategories] = useState<ICategory[]>(c); // Affichage des categories
   const [searchTerm, setSearchTerm] = useState(''); // Ajout de l'état pour la recherche
   const [searchCategory, setSearchCategory] = useState<string>(''); // Ajout pour la catégorie
- 
+  const [showSuggestions, setShowSuggestions] = useState(false); // Nouvel état pour afficher/cacher les suggestions
+
  
 
-  const handleOpenModal = () => setIsModalOpen(true);
-  const handleCloseModal = () => setIsModalOpen(false);
+  const handleOpenModal = () => setIsModalOpen(true); // Ouverture de la modale
+  const handleCloseModal = () => setIsModalOpen(false);// Fermeture de la modale
 
   
   
@@ -31,17 +32,34 @@ function App() {
   return (
     
 		<div className="app">
-			< Header cartProducts={cartProducts} categories={categories}  searchTerm={searchTerm} setSearchTerm={setSearchTerm} searchCategory={searchCategory} setSearchCategory={setSearchCategory}    />
+			< Header 
+        cartProducts={cartProducts}
+        categories={categories}
+        searchTerm={searchTerm}
+        setSearchTerm={setSearchTerm}
+        searchCategory={searchCategory}
+        setSearchCategory={setSearchCategory}
+        products={products}
+        showSuggestions={showSuggestions}
+        setShowSuggestions={setShowSuggestions}    />
 			<main className="main">
-        <Categories />
-        <Products cartProducts={cartProducts} setCartProducts={setCartProducts} products={products} searchTerm={searchTerm} searchCategory={searchCategory}  />
+      <Categories />
+      <Products
+        cartProducts={cartProducts}
+        setCartProducts={setCartProducts}
+        products={products} 
+        searchTerm={searchTerm} 
+        searchCategory={searchCategory}  />
 			</main>
       <Footer handleOpenModal={handleOpenModal} /> 
       
       {isModalOpen && (
-        <Modal title="Ajouter un produit" onClose={handleCloseModal}>
-          <ProductAddForm setProducts={setProducts} products={products} onClose={handleCloseModal} />
-        </Modal>
+      <Modal title="Ajouter un produit" onClose={handleCloseModal}>
+      <ProductAddForm 
+        setProducts={setProducts} 
+        products={products} 
+        onClose={handleCloseModal} />
+      </Modal>
       )}
 		</div>
 	);

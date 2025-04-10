@@ -1,5 +1,5 @@
 
-import { ICategory } from '../@types/product';
+import { ICategory, IProduct } from '../@types/product';
 import './Header.scss'
 
 
@@ -10,10 +10,24 @@ type HeaderProps = {
     setSearchTerm: React.Dispatch<React.SetStateAction<string>>;
     searchCategory: string;
     setSearchCategory: React.Dispatch<React.SetStateAction<string>>
+    products: IProduct[],
+    showSuggestions: boolean;
+    setShowSuggestions: React.Dispatch<React.SetStateAction<boolean>>;
 
   };
 
-function Header ({cartProducts, categories, searchTerm, setSearchTerm, searchCategory, setSearchCategory  }: HeaderProps){
+function Header ({cartProducts, categories, searchTerm, setSearchTerm, searchCategory, setSearchCategory, products, showSuggestions, setShowSuggestions  }: HeaderProps){
+
+    // Fonction pour filtrer les produits selon les critères
+    const getFilteredProducts = () => {
+        return products.filter(product => {
+            const FilteredProduct = product.title.toLowerCase().startsWith(searchTerm.toLowerCase());
+            const FilteredCategory = searchCategory === '' || product.category.id.toString() === searchCategory;
+            return FilteredProduct && FilteredCategory;
+        }).slice(0, 5);
+    };
+
+    const filteredProducts = getFilteredProducts();
 
     return (
         <div className="header">
@@ -47,21 +61,38 @@ function Header ({cartProducts, categories, searchTerm, setSearchTerm, searchCat
                         </option>
                     ))}
                 </select>
-            <input
-                type="text"
-                className="header-form-input"
-                placeholder="Rechercher ..."
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-            />
-            <button className="header-form-button" type="button">
-            <img src=".../../public/icons/search.svg" alt="Recherche" className="icon-search" />
-            </button>
+                <input
+                    type="text"
+                    className="header-form-input"
+                    placeholder="Rechercher ..."
+                    value={searchTerm}
+                    onChange={(e) => {
+                        setSearchTerm(e.target.value);
+                        setShowSuggestions(e.target.value.length > 0); // Affiche les suggestions seulement a partir de 1 caractère saisie
+                    }}
+
+                />
+                    {/* Affichage des suggestion dans la barre de recherche */}
+
+                {showSuggestions && filteredProducts.length > 0 && (
+                    <div className="suggestions-container">
+                        {filteredProducts.map(product => (
+                            <div 
+                                key={product.id} 
+                                className="suggestion-item"
+                                onClick={() => {
+                                    setSearchTerm(product.title);
+                                    setShowSuggestions(false);
+                                }}
+                            >
+                                <span>{product.title}</span>
+                            </div>
+                        ))}
+                    </div>
+                )}
+            </div>
         </div>
-    </div>
-
-    )
-
+    );
 }
 
 export default Header

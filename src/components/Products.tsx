@@ -14,11 +14,9 @@ function Products ({cartProducts, setCartProducts, products, searchTerm, searchC
 
 	const filteredProducts = products.filter(product => {
 		// Filtre par terme de recherche
-        const FilteredTerm = product.title.toLowerCase().includes(searchTerm.toLowerCase());
-        
+        const FilteredTerm = product.title.toLowerCase().startsWith(searchTerm.toLowerCase());
         // Filtre par catégorie (si une catégorie est sélectionnée)
         const FilteredCategory = searchCategory === '' || product.category.id.toString() === searchCategory;
-        
         return FilteredTerm && FilteredCategory;
     });
 
@@ -27,7 +25,6 @@ function Products ({cartProducts, setCartProducts, products, searchTerm, searchC
         <section className="products">
 					<h2>Tous nos produits</h2>
 					<div className="products-list">
-						
 						{filteredProducts.map((product) => {
 							return (
 								<div key={product.id} className="product">
@@ -38,7 +35,9 @@ function Products ({cartProducts, setCartProducts, products, searchTerm, searchC
 							<div className="product-price">
 								{product.price}
 								<span className="price-decimal"> €</span>
-							</div>
+							</div>	
+			{/* Ajout d'un article au panier via le bouton Ajouter au panier  */}
+			
 							<button
 							 type="button"
 							  className="product-add"
