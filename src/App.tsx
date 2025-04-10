@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './App.scss'
 import Categories from './components/Categories';
 import Footer from './components/Footer';
@@ -21,6 +21,14 @@ function App() {
   const [searchCategory, setSearchCategory] = useState<string>(''); // Ajout pour la catégorie
   const [showSuggestions, setShowSuggestions] = useState(false); // Nouvel état pour afficher/cacher les suggestions
 
+
+// Effet pour mettre à jour le titre de l'onglet
+useEffect(() => {
+  const count = cartProducts.length;
+  document.title = count > 0 
+    ? `Omazon - (Panier : ${count} ${count > 1 ? 'produits' : 'produit'})` 
+    : 'Omazon';
+}, [cartProducts]);
 
 
  
