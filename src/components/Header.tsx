@@ -1,6 +1,9 @@
 
+import { useEffect, useRef } from 'react';
 import { ICategory, IProduct } from '../@types/product';
 import './Header.scss'
+
+
 
 
 type HeaderProps = {
@@ -13,10 +16,9 @@ type HeaderProps = {
     products: IProduct[],
     showSuggestions: boolean;
     setShowSuggestions: React.Dispatch<React.SetStateAction<boolean>>;
-
   };
 
-function Header ({cartProducts, categories, searchTerm, setSearchTerm, searchCategory, setSearchCategory, products, showSuggestions, setShowSuggestions  }: HeaderProps){
+function Header ({cartProducts, categories, searchTerm, setSearchTerm, searchCategory, setSearchCategory, products, showSuggestions, setShowSuggestions}: HeaderProps){
 
     // Fonction pour filtrer les produits selon les critères
     const getFilteredProducts = () => {
@@ -29,8 +31,31 @@ function Header ({cartProducts, categories, searchTerm, setSearchTerm, searchCat
 
     const filteredProducts = getFilteredProducts();
 
+    const headerRef = useRef<HTMLDivElement | null>(null);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            if (!headerRef.current) return;
+
+            if (window.scrollY > 0) {
+                headerRef.current.classList.add('header--scroll');
+            } else {
+                headerRef.current.classList.remove('header--scroll');
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+
+        // Clean up on unmount
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
+
+    
     return (
-        <div className="header">
+        <div className="header" ref={headerRef}>
         <div className="header-logo">
             <img className="logo" src=".../../public/logos/omazon.svg" alt="omazon" />
         </div>

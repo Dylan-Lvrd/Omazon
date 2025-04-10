@@ -21,6 +21,8 @@ function App() {
   const [searchCategory, setSearchCategory] = useState<string>(''); // Ajout pour la catégorie
   const [showSuggestions, setShowSuggestions] = useState(false); // Nouvel état pour afficher/cacher les suggestions
 
+
+
  
 
   const handleOpenModal = () => setIsModalOpen(true); // Ouverture de la modale
@@ -41,7 +43,8 @@ function App() {
         setSearchCategory={setSearchCategory}
         products={products}
         showSuggestions={showSuggestions}
-        setShowSuggestions={setShowSuggestions}    />
+        setShowSuggestions={setShowSuggestions}
+        />
 			<main className="main">
       <Categories />
       <Products

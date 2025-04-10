@@ -9,6 +9,11 @@
     color: v.$main-low;
     padding: 0.6rem;
     gap: 1rem;
+    position: fixed;
+    right: 0;
+    left: 0;
+    z-index: 1000;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, backdrop-filter 0.3s ease;
   
     &-logo {
       padding: 5px;
@@ -47,6 +52,8 @@
         border: none;
         background-color: v.$brand-primary;
       }
+      
+
     }
   
     &-account {
@@ -131,4 +138,9 @@
 
 .header-form {
   position:relative;
+}
+
+.header--scroll {
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, backdrop-filter 0.3s ease;
 }
