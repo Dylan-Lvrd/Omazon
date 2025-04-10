@@ -17,23 +17,24 @@ function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [products, setProducts] = useState<IProduct[]>(p);
   const [categories, setCategories] = useState<ICategory[]>(c);
-  const [CategoriesOpen, setCategoriesOpen] = useState(false);
+  const [searchTerm, setSearchTerm] = useState(''); // Ajout de l'état pour la recherche
+  const [searchCategory, setSearchCategory] = useState<string>(''); // Ajout pour la catégorie
  
  
 
   const handleOpenModal = () => setIsModalOpen(true);
   const handleCloseModal = () => setIsModalOpen(false);
-  const toggleCategories = () => setCategoriesOpen(!CategoriesOpen);
+
   
   
  
   return (
     
 		<div className="app">
-			< Header cartProducts={cartProducts} categories={categories} CategoriesOpen={CategoriesOpen} toggleCategories={toggleCategories}    />
+			< Header cartProducts={cartProducts} categories={categories}  searchTerm={searchTerm} setSearchTerm={setSearchTerm} searchCategory={searchCategory} setSearchCategory={setSearchCategory}    />
 			<main className="main">
         <Categories />
-        <Products cartProducts={cartProducts} setCartProducts={setCartProducts} products={products} />
+        <Products cartProducts={cartProducts} setCartProducts={setCartProducts} products={products} searchTerm={searchTerm} searchCategory={searchCategory}  />
 			</main>
       <Footer handleOpenModal={handleOpenModal} /> 
       

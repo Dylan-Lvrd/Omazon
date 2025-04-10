@@ -6,13 +6,14 @@ import './Header.scss'
 type HeaderProps = {
     cartProducts: number[];
     categories: ICategory[];
-    CategoriesOpen: boolean;
-    toggleCategories: () => void;
-
+    searchTerm: string;
+    setSearchTerm: React.Dispatch<React.SetStateAction<string>>;
+    searchCategory: string;
+    setSearchCategory: React.Dispatch<React.SetStateAction<string>>
 
   };
 
-function Header ({cartProducts, categories, CategoriesOpen, toggleCategories }: HeaderProps){
+function Header ({cartProducts, categories, searchTerm, setSearchTerm, searchCategory, setSearchCategory  }: HeaderProps){
 
     return (
         <div className="header">
@@ -33,26 +34,25 @@ function Header ({cartProducts, categories, CategoriesOpen, toggleCategories }: 
             <div className="header-cart-title">Panier</div>
         </a>
         <div className="header-form">
-            <button className="header-form-filter" type="button" onClick={toggleCategories} >
-                Toutes nos catégories
-                <img src=".../../public/icons/caret-down.svg" alt="flèche bas" className="icon-caret-down" />
-            </button>
-            {CategoriesOpen && (
-                        <div className="categories-open">
-                            {categories.map((category) => (
-                                <div 
-                                    key={category.id} 
-                                    className="categories-item"
-                                >
-                                    {category.title}
-                                </div>
-                            ))}
-                        </div>
-            )}
+           {/*  Boutons de filtre des catégories */}  
+        <select
+                    className="header-form-filter"
+                    value={searchCategory}
+                    onChange={(c) => setSearchCategory(c.target.value)}
+                >
+                    <option value="">Toutes catégories</option>
+                    {categories.map((category) => (
+                        <option key={category.id} value={category.id}>
+                            {category.title}
+                        </option>
+                    ))}
+                </select>
             <input
                 type="text"
                 className="header-form-input"
                 placeholder="Rechercher ..."
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
             />
             <button className="header-form-button" type="button">
             <img src=".../../public/icons/search.svg" alt="Recherche" className="icon-search" />
