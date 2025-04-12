@@ -1,4 +1,4 @@
-import { IProduct } from '../@types/product';
+import type { IProduct } from '../@types/product';
 import './ProductAddForm.scss';
 import tags from '../data/tags.json';
 import categories from '../data/categories.json';
@@ -33,8 +33,8 @@ function ProductAddForm ({setProducts, products, onClose} : ProductsAddFormProps
             return;
           }
 
-          const foundCategory = categories.find((cat) => cat.id === parseInt(formData.get('category') as string));
-          const foundTag = tags.find((tag) => tag.id === parseInt(formData.get('tag') as string));
+          const foundCategory = categories.find((cat) => cat.id === Number.parseInt(formData.get('category') as string));
+          const foundTag = tags.find((tag) => tag.id === Number.parseInt(formData.get('tag') as string));
 
           const maxId = Math.max(...products.map((product) => product.id))
 
@@ -42,7 +42,7 @@ function ProductAddForm ({setProducts, products, onClose} : ProductsAddFormProps
             const newProduct = {
               id : maxId + 1,
               title : formData.get('title') as string,
-              price : parseInt(formData.get('price') as string),
+              price : Number.parseInt(formData.get('price') as string),
               image : formData.get('image') as string,
               category : foundCategory,
               tag: foundTag,
