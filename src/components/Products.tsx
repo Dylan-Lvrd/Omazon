@@ -1,5 +1,5 @@
 import './Products.scss'
-import { IProduct } from '../@types/product';
+import type { IProduct } from '../@types/product';
 
 
 interface ProductsProps  {
@@ -10,7 +10,11 @@ interface ProductsProps  {
 	searchCategory: string;
   };
 
-function Products ({cartProducts, setCartProducts, products, searchTerm, searchCategory }: ProductsProps){
+function Products ({cartProducts,
+				    setCartProducts,
+				    products,
+				    searchTerm, 
+					searchCategory }: ProductsProps){
 
 	const filteredProducts = products.filter(product => {
 		// Filtre par terme de recherche
@@ -19,6 +23,8 @@ function Products ({cartProducts, setCartProducts, products, searchTerm, searchC
         const FilteredCategory = searchCategory === '' || product.category.id.toString() === searchCategory;
         return FilteredTerm && FilteredCategory;
     });
+
+
 
     return (
 
@@ -29,7 +35,7 @@ function Products ({cartProducts, setCartProducts, products, searchTerm, searchC
 							return (
 								<div key={product.id} className="product">
 							<div className="product-img">
-								<img src={`../../public/products/${product.image}`} alt="produit" />
+								<img src={product.image} alt="produit" />
 							</div>
 							<div className="product-name">{product.title}</div>
 							<div className="product-price">

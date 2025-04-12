@@ -2,17 +2,18 @@
 @use '../styles/variables' as v;
 
 .header {
-    display: flex;
-    flex-wrap: wrap;
+    display: flex; 
+    flex-wrap: wrap; 
     justify-content: space-between;
     background-color: v.$main-high;
     color: v.$main-low;
     padding: 0.6rem;
     gap: 1rem;
-    position: fixed;
-    right: 0;
+    /* position: fixed; */
+  /*   right: 0;
     left: 0;
-    z-index: 1000;
+    top: 0;
+    z-index: 1000; */
     transition: background-color 0.3s ease, box-shadow 0.3s ease, backdrop-filter 0.3s ease;
   
     &-logo {
