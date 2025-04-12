@@ -1,23 +1,26 @@
 import './Categorie.scss'
-import categorie from '../data/categories.json'
+import type { ICategory } from '../@types/product';
 
+interface CategoriesProps {
+	categories: ICategory[];
+  }
 
-function Categories (){
+function Categories ({categories}: CategoriesProps){
     return (
         <section className="categories">
 					<h2 className="categories-title">Catégories à l'honneur</h2>
 					<div className="categories-list">
 
-						{categorie.map((categories) => {
+						{categories.map((categorie) => {
 							return (
-								<div key={categories.id} className="category">
+								<div key={categorie.id} className="category">
 							<div className="category-img">
 								<img
-									src={`../../public/categories/${categories.image}`}
+									src={categorie.image}
 									alt="produit"
 								/>
 							</div>
-							<div className="category-name">{categories.title}</div>
+							<div className="category-name">{categorie.title}</div>
 						</div>
 
 							)

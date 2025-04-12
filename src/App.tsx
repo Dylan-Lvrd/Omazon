@@ -7,7 +7,6 @@ import Products from './components/Products';
 import Modal from './components/Modale';
 import ProductAddForm from './components/ProductAddForm';
 import type { IProduct, ICategory } from './@types/product';
-import c from './data/categories.json';
 import axios from 'axios';
 
 
@@ -16,7 +15,7 @@ function App() {
   const [cartProducts, setCartProducts] = useState<number[]>([]); // Affichage des produits dans le panier
   const [isModalOpen, setIsModalOpen] = useState(false); // Affichage de la modal pour ajout d'un produit
   const [products, setProducts] = useState<IProduct[]>([]); // Ajout d'un produit dans la modale
-  const [categories, setCategories] = useState<ICategory[]>(c); // Affichage des categories
+  const [categories, setCategories] = useState<ICategory[]>([]); // Affichage des categories
   const [searchTerm, setSearchTerm] = useState(''); // Ajout de l'état pour la recherche
   const [searchCategory, setSearchCategory] = useState<string>(''); // Ajout pour la catégorie
   const [showSuggestions, setShowSuggestions] = useState(false); // Nouvel état pour afficher/cacher les suggestions
@@ -53,16 +52,34 @@ useEffect(() => {
 		};
 		getProducts()
 	  }, []);
-  
-    if (isLoading) {
-      return (
-        <div className="loader-container">
-          <div className="loader">
-            <p>Loading...</p>
-          </div>
+
+      // Récupération des catégories
+      useEffect (() => {
+        const getProducts = async () => {
+          try {
+          const response = await axios.get(
+            'https://omazon-server.onrender.com/categories',
+          );
+          console.log(response.data)
+           setCategories(response.data)
+          }
+          catch(error){
+          console.log(error);
+          }
+          setIsLoading(false)
+        };
+        getProducts()
+        }, []);
+
+  if (isLoading) {
+    return (
+      <div className="loader-container">
+        <div className="loader">
+          <p>Loading...</p>
         </div>
-      );
-    };
+      </div>
+    );
+  };
 
   return (
     
@@ -79,7 +96,7 @@ useEffect(() => {
         setShowSuggestions={setShowSuggestions}
         />
 			<main className="main">
-      <Categories />
+      <Categories categories={categories}  />
       <Products
         cartProducts={cartProducts}
         setCartProducts={setCartProducts}
