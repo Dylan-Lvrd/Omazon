@@ -1,22 +1,21 @@
 .loginForm {
-    display: none;
     background-color: white;
     padding: 20px;
     width: 250px;
+    height: 250px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     margin-top: 10px;
   }
+
+  .loginFormElement {
+    display: flex; /* Ajout */
+    flex-direction: column; /* Ajout */
+    height: 100%; /* Ajout */
+    justify-content: space-between; /* Ajout */
+}
   
-  .input {
-    display: block;
-    margin-bottom: 10px;
-    width: 100%;
-    padding: 8px;
-    box-sizing: border-box;
-  }
-  
-  .button {
+  .btn {
     background-color: #ffd700;
     color: black;
     padding: 8px 12px;
@@ -24,11 +23,6 @@
     cursor: pointer;
     font-weight: bold;
     border-radius: 4px;
+    margin-top: 10px;
   }
   
-  .a {
-    color: black;
-    font-weight: bold;
-    text-decoration: none;
-    cursor: pointer;
-  }

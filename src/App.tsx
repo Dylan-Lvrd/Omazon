@@ -8,6 +8,8 @@ import Modal from './components/Modale';
 import ProductAddForm from './components/ProductAddForm';
 import type { IProduct, ICategory } from './@types/product';
 import axios from 'axios';
+import LoginForm from './components/LoginForm';
+
 
 
 function App() {
@@ -20,6 +22,7 @@ function App() {
   const [searchCategory, setSearchCategory] = useState<string>(''); // Ajout pour la catégorie
   const [showSuggestions, setShowSuggestions] = useState(false); // Nouvel état pour afficher/cacher les suggestions
   const [isLoading, setIsLoading] = useState(true); // Loader
+  const [showLoginForm, setShowLoginForm] = useState(false); // Affichage du formulaire de connexion 
 
 
 // Effet pour mettre à jour le titre de l'onglet avec le nombre d'article dans le panier
@@ -30,11 +33,10 @@ useEffect(() => {
     : 'Omazon';
 }, [cartProducts]);
 
-
- 
-
   const handleOpenModal = () => setIsModalOpen(true); // Ouverture de la modale
   const handleCloseModal = () => setIsModalOpen(false);// Fermeture de la modale
+  const handleOpenLoginForm = () => setShowLoginForm(true); // Ouverture formulaire de connexion
+  const handleCloseLoginForm = () => setShowLoginForm(false); // Fermeture formulaire de connexion
 
   useEffect (() => {
 		const getProducts = async () => {
@@ -94,7 +96,14 @@ useEffect(() => {
         products={products}
         showSuggestions={showSuggestions}
         setShowSuggestions={setShowSuggestions}
+        setShowLoginForm={handleOpenLoginForm}
         />
+        {showLoginForm && (
+      <Modal title="Connexion" onClose={handleCloseLoginForm}>
+        <LoginForm />
+      </Modal>
+       )}  
+
 			<main className="main">
       <Categories categories={categories}  />
       <Products

@@ -1,7 +1,7 @@
 import './Footer.scss'
 
 interface FooterProps {
-	handleOpenModal: () => void; // Prop pour ouvrir la modale
+	handleOpenModal: () => void;
   }
 
 function Footer ({handleOpenModal}: FooterProps){

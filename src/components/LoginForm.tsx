@@ -1,4 +1,4 @@
-
+import './LoginForm.scss';
 
 function LoginForm () {
 return (
@@ -11,10 +11,12 @@ return (
       <label htmlFor="password">Mot de passe :</label>
       <input type="password" className="password" name="password" required />
 
-      <button type="submit">Connexion</button>
+      <button className="btn" type="submit">Connexion</button>
     </form>
   </div>
 
 )
 
 }
+
+export default LoginForm

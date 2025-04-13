@@ -12,6 +12,7 @@ type HeaderProps = {
 	products: IProduct[];
 	showSuggestions: boolean;
 	setShowSuggestions: React.Dispatch<React.SetStateAction<boolean>>;
+    setShowLoginForm: () => void;
 };
 
 function Header({
@@ -24,6 +25,7 @@ function Header({
 	products,
 	showSuggestions,
 	setShowSuggestions,
+    setShowLoginForm
 }: HeaderProps) {
 	// Fonction pour filtrer les produits selon les critères
 	const getFilteredProducts = () => {
@@ -65,7 +67,7 @@ function Header({
 	}, []);
 
 	return (
-		<div className="header" ref={headerRef}>
+		<div className="header">
 			<div className="header-logo">
 				<img
 					className="logo"
@@ -73,7 +75,7 @@ function Header({
 					alt="omazon"
 				/>
 			</div>
-			<a href="/account" className="header-account">
+			<a href="/account" className="header-account" onClick={(e) => {e.preventDefault(); setShowLoginForm();}}>
 				Bonjour, identifiez-vous
 				<div className="link--bold">
 					Compte et listes <span className="icon-caret-down" />
