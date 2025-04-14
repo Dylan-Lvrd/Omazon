@@ -5,6 +5,7 @@ export interface IProduct {
     image: string;
     category: ICategory;
     tag: ITag | number;
+    description: string;
 }
 
 export interface ICategory {

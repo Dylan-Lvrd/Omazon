@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
 import type { ICategory, IProduct } from "../@types/product";
 import "./Header.scss";
+import { Link } from "react-router";
 
 type HeaderProps = {
 	cartProducts: number[];
@@ -12,7 +13,7 @@ type HeaderProps = {
 	products: IProduct[];
 	showSuggestions: boolean;
 	setShowSuggestions: React.Dispatch<React.SetStateAction<boolean>>;
-    setShowLoginForm: () => void;
+	setShowLoginForm: () => void;
 };
 
 function Header({
@@ -25,7 +26,7 @@ function Header({
 	products,
 	showSuggestions,
 	setShowSuggestions,
-    setShowLoginForm
+	setShowLoginForm,
 }: HeaderProps) {
 	// Fonction pour filtrer les produits selon les critères
 	const getFilteredProducts = () => {
@@ -66,16 +67,30 @@ function Header({
 		};
 	}, []);
 
+	const inputRef = useRef<HTMLInputElement | null>(null)
+	useEffect (()=>{
+		inputRef.current?.focus()
+	}, []
+	)
 	return (
 		<div className="header">
 			<div className="header-logo">
+                <Link to="/">
 				<img
 					className="logo"
 					src=".../../public/logos/omazon.svg"
 					alt="omazon"
 				/>
+                </Link>
 			</div>
-			<a href="/account" className="header-account" onClick={(e) => {e.preventDefault(); setShowLoginForm();}}>
+			<a
+				href="/account"
+				className="header-account"
+				onClick={(e) => {
+					e.preventDefault();
+					setShowLoginForm();
+				}}
+			>
 				Bonjour, identifiez-vous
 				<div className="link--bold">
 					Compte et listes <span className="icon-caret-down" />
@@ -109,6 +124,7 @@ function Header({
 					))}
 				</select>
 				<input
+					ref={inputRef}
 					type="text"
 					className="header-form-input"
 					placeholder="Rechercher ..."
@@ -124,7 +140,7 @@ function Header({
 					<div className="suggestions-container">
 						{filteredProducts.map((product) => (
 							// biome-ignore lint/a11y/useKeyWithClickEvents: <explanation>
-                            <div
+							<div
 								key={product.id}
 								className="suggestion-item"
 								onClick={() => {

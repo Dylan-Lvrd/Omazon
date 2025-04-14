@@ -1,5 +1,6 @@
 import './Products.scss'
 import type { IProduct } from '../@types/product';
+import { Link } from 'react-router';
 
 
 interface ProductsProps  {
@@ -34,10 +35,12 @@ function Products ({cartProducts,
 						{filteredProducts.map((product) => {
 							return (
 								<div key={product.id} className="product">
+							<Link to={`/produit/${product.id}`}>
 							<div className="product-img">
 								<img src={product.image} alt="produit" />
 							</div>
 							<div className="product-name">{product.title}</div>
+							</Link>
 							<div className="product-price">
 								{product.price}
 								<span className="price-decimal"> €</span>
