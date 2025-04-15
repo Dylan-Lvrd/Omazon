@@ -8,12 +8,17 @@ interface ProductPageProps {
 }
 
 function ProductPage({ products }: ProductPageProps) {
+	// On récupère l'id depuis l'URL
 	const { id } = useParams<{ id: string }>();
+	// On trouve le produit correspondant
 	const product = products.find((p) => p.id === Number(id));
 	console.log(product);
-    let safeProductDescription = ""
-    if(product){
-        safeProductDescription = DOMPurify.sanitize(product.description);}
+
+	// Interpretation des balise HTML
+	let safeProductDescription = "";
+	if (product) {
+		safeProductDescription = DOMPurify.sanitize(product.description);
+	}
 
 	return (
 		<div className="article-presentation">

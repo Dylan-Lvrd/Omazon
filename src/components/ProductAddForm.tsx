@@ -54,7 +54,7 @@ function ProductAddForm({
 								title: formData.get("title") as string,
 								price: Number.parseInt(formData.get("price") as string),
 								image: formData.get("image") as string,
-								category: foundCategory,
+								categoryId: foundCategory,
 								tag: foundTag,
 								description: formData.get("description") as string,
 							};
@@ -108,6 +108,9 @@ function ProductAddForm({
 							<label htmlFor="tag">Tag</label>
 							<select id="tag" name="tag">
 								{tags.map((tag) => {
+
+									/* Interprétation du code HTML */
+
 									const safeTagText = DOMPurify.sanitize(tag.text);
 									return (
 										<option

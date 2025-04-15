@@ -37,7 +37,7 @@ function Header({
 					.startsWith(searchTerm.toLowerCase());
 				const FilteredCategory =
 					searchCategory === "" ||
-					product.category.id.toString() === searchCategory;
+					product.categoryId.toString() === searchCategory;
 				return FilteredProduct && FilteredCategory;
 			})
 			.slice(0, 5);
@@ -110,6 +110,7 @@ function Header({
 				<div className="header-cart-title">Panier</div>
 			</a>
 			<div className="header-form">
+
 				{/*  Boutons de filtre des catégories */}
 				<select
 					className="header-form-filter"
@@ -138,20 +139,20 @@ function Header({
 
 				{showSuggestions && filteredProducts.length > 0 && (
 					<div className="suggestions-container">
-						{filteredProducts.map((product) => (
-							// biome-ignore lint/a11y/useKeyWithClickEvents: <explanation>
-							<div
-								key={product.id}
-								className="suggestion-item"
-								onClick={() => {
-									setSearchTerm(product.title);
-									setShowSuggestions(false);
-								}}
-							>
-								<span>{product.title}</span>
-							</div>
-						))}
-					</div>
+					{filteredProducts.map((product) => (
+						<Link
+							to={`/produit/${product.id}`}
+							key={product.id}
+							className="suggestion-item"
+							onClick={() => {
+								setSearchTerm("");
+								setShowSuggestions(false);
+							}}
+						>
+							{product.title}
+						</Link>
+					))}
+				</div>
 				)}
 			</div>
 		</div>

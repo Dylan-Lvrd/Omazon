@@ -16,6 +16,7 @@ function CategoryPage({
 	products,
 	categories,
 }: ProductsProps) {
+    
 	// On récupère le slug depuis l'URL
 	const { slug } = useParams();
 
