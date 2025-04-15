@@ -21,7 +21,7 @@ function Products ({cartProducts,
 		// Filtre par terme de recherche
         const FilteredTerm = product.title.toLowerCase().startsWith(searchTerm.toLowerCase());
         // Filtre par catégorie (si une catégorie est sélectionnée)
-        const FilteredCategory = searchCategory === '' || product.category.id.toString() === searchCategory;
+        const FilteredCategory = searchCategory === '' || product.categoryId.id.toString() === searchCategory;
         return FilteredTerm && FilteredCategory;
     });
 

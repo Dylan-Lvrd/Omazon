@@ -1,5 +1,6 @@
 import "./Categorie.scss";
 import type { ICategory } from "../@types/product";
+import { Link } from "react-router";
 
 interface CategoriesProps {
 	categories: ICategory[];
@@ -12,12 +13,15 @@ function Categories({ categories }: CategoriesProps) {
 			<div className="categories-list">
 				{categories.map((categorie) => {
 					return (
-						<div key={categorie.id} className="category">
-							<div className="category-img">
-								<img src={categorie.image} alt="produit" />
+						// biome-ignore lint/correctness/useJsxKeyInIterable: <explanation>
+						<Link key={categorie.id} to={`/categorie/${categorie.slug}`}>
+							<div  className="category">
+								<div className="category-img">
+									<img src={categorie.image} alt="produit" />
+								</div>
+								<div className="category-name">{categorie.title}</div>
 							</div>
-							<div className="category-name">{categorie.title}</div>
-						</div>
+						</Link>
 					);
 				})}
 			</div>

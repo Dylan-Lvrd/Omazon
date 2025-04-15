@@ -10,6 +10,7 @@ import LoginForm from "./components/LoginForm";
 import { Route, Routes } from "react-router";
 import HomePage from "./components/HomePages";
 import ProductPage from "./components/ProductPage";
+import CategoryPage from "./components/CategoryPage";
 
 function App() {
 	const [cartProducts, setCartProducts] = useState<number[]>([]); // Affichage des produits dans le panier
@@ -114,10 +115,22 @@ function App() {
 						/>
 					}
 				/>
-        <Route
-              path="/produit/:id"
-              element={<ProductPage products={products} />}
-              />
+				<Route
+					path="/produit/:id"
+					element={<ProductPage products={products} />}
+				/>
+
+				<Route
+					path="/categorie/:slug"
+					element={
+						<CategoryPage
+							categories={categories}
+							cartProducts={cartProducts}
+							setCartProducts={setCartProducts}
+							products={products}
+						/>
+					}
+				/>
 
 				{/* route pour les erreurs 404 */}
 				<Route path="*" element={<div>Erreur 404</div>} />
