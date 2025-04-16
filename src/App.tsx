@@ -22,6 +22,8 @@ function App() {
 	const [showSuggestions, setShowSuggestions] = useState(false); // Nouvel état pour afficher/cacher les suggestions
 	const [isLoading, setIsLoading] = useState(true); // Loader
 	const [showLoginForm, setShowLoginForm] = useState(false); // Affichage du formulaire de connexion
+  	const [isConnected, setIsConnected] = useState(false);
+  	
 
 	// Effet pour mettre à jour le titre de l'onglet avec le nombre d'article dans le panier
 	useEffect(() => {
@@ -96,7 +98,7 @@ function App() {
 			/>
 			{showLoginForm && (
 				<Modal title="Connexion" onClose={handleCloseLoginForm}>
-					<LoginForm />
+					<LoginForm isConnected={isConnected} setIsConnected={setIsConnected} />
 				</Modal>
 			)}
 

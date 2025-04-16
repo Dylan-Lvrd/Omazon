@@ -1,4 +1,4 @@
-.loginForm {
+.login-form {
     background-color: white;
     padding: 20px;
     width: 250px;
@@ -8,13 +8,7 @@
     margin-top: 10px;
   }
 
-  .loginFormElement {
-    display: flex; /* Ajout */
-    flex-direction: column; /* Ajout */
-    height: 100%; /* Ajout */
-    justify-content: space-between; /* Ajout */
-}
-  
+ 
   .btn {
     background-color: #ffd700;
     color: black;
